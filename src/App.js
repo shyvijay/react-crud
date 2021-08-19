@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-expand navbar-dark bg-dark">
+        <nav className="navbar navbar-expand navbar-dark bg-dark p-2">
           <a href="/tutorials" className="navbar-brand">
             VijaySwami
           </a>
@@ -27,18 +27,14 @@ class App extends Component {
               </Link>
             </li>
           </div>
-          <div className="container mt-3">
-            <Switch>
-              <Route
-                exact
-                path={["/", "/tutorials"]}
-                component={TutorialList}
-              />
-              <Route exact path="/add" component={AddTutorial} />
-              <Route path="/tutorials/:id" component={Tutorial} />
-            </Switch>
-          </div>
         </nav>
+        <div className="container mt-3">
+          <Switch>
+            <Route exact path={["/", "/tutorials"]} component={TutorialList} />
+            <Route exact path="/add" component={AddTutorial} />
+            <Route path="/tutorials/:id" component={Tutorial} />
+          </Switch>
+        </div>
       </div>
     );
   }
